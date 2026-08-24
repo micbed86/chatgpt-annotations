@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatGPT Annotations settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div>
+        <div class="eyebrow">ChatGPT Annotations · by <a href="https://github.com/micbed86" target="_blank" rel="noopener noreferrer">micbed86</a></div>
+        <h1>Settings</h1>
+        <p>Changes apply to new annotations immediately on open ChatGPT tabs.</p>
+      </div>
+      <div class="version">v0.4.0</div>
+    </header>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2>Instruction sent to the model</h2>
+          <p>This instruction is included in every annotation bundle. The selected excerpts and your comments are added separately.</p>
+        </div>
+      </div>
+      <textarea id="prompt" rows="8" spellcheck="true"></textarea>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2>Appearance</h2>
+          <p>Customize the main colors used by the annotation controls, highlights, panels, and sent-annotation tags.</p>
+        </div>
+      </div>
+      <div class="colors">
+        <label class="color-field">
+          <span>Accent</span>
+          <div><input id="accent" type="color"><code id="accentValue"></code></div>
+        </label>
+        <label class="color-field">
+          <span>Surface</span>
+          <div><input id="surface" type="color"><code id="surfaceValue"></code></div>
+        </label>
+        <label class="color-field">
+          <span>Text</span>
+          <div><input id="text" type="color"><code id="textValue"></code></div>
+        </label>
+        <label class="color-field">
+          <span>Selection highlight</span>
+          <div><input id="highlight" type="color"><code id="highlightValue"></code></div>
+        </label>
+      </div>
+      <div class="preview" id="preview">
+        <button type="button" tabindex="-1">✓ 2 annotations attached</button>
+        <div class="preview-panel">
+          <small>Selected text:</small>
+          <div>Example excerpt from an earlier message.</div>
+          <small>Annotation:</small>
+          <div>Example instruction attached to this excerpt.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="actions">
+      <span id="status" role="status" aria-live="polite"></span>
+      <button id="reset" type="button" class="secondary">Reset defaults</button>
+      <button id="save" type="button" class="primary">Save settings</button>
+    </footer>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
